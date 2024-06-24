@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+import sys
+import json
+from datetime import datetime
+
+if len(sys.argv) == 1:
+    print("USAGE: " + sys.argv[0] + " file.json")
+    exit()
+
+f = open(sys.argv[1],)
+data = json.load(f)
+f.close()
+
+def convDate(d):
+    date = datetime.strptime(d, '%Y-%m-%dT%H:%M:%S.%fZ')
+    date_s = str(date)
+    if len(date_s) == 19: date_s = date_s + "       "
+    return date_s
+
+print("# firstSeen -> lastSeen | BSSID | SSID")
+print("+-------------------------------------")
+for i in data['wifiLog']:
+    b = i['BSSID']
+    s = i['SSID']
+    f = convDate(i['firstSeen'])
+    l = convDate(i['lastSeen'])
+    print(f,'->',l,'|',b,'|',s)

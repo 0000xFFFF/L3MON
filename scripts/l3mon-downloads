@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+import sys
+import json
+
+if len(sys.argv) == 1:
+    print("USAGE: " + sys.argv[0] + " file.json")
+    exit()
+
+f = open(sys.argv[1],)
+data = json.load(f)
+f.close()
+
+print("# downloads")
+for i in data['downloads']:
+    print("mv","\"/home/user/.vip/tools/L3MON/server/assets/webpublic" + i['path'] + "\"","\"/home/user/.vip/tools/L3MON/server/assets/webpublic/client_downloads/" + i['originalName'] + "\"")
+
+

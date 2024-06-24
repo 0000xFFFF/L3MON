@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+import sys
+import json
+
+if len(sys.argv) == 1:
+    print("USAGE: " + sys.argv[0] + " file.json")
+    exit()
+
+f = open(sys.argv[1],)
+data = json.load(f)
+f.close()
+
+for i in data['wifiNow']:
+    print(i['BSSID'] + " | " + i['SSID'])

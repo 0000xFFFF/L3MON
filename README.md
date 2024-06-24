@@ -93,6 +93,7 @@ L3MON is built for both Educational and Internal use ONLY.</b>
 <p align="center">Made with ❤️ By <a href="//d3vl.com">D3VL</a></p>
 <p align="center" style="font-size: 8px">v1.1.3</p>
 
-## Stuff That's Added/Changed
+## 0000xFFFF --- My Stuff That's Added/Changed
  - changed: LOG colors/look
  - added: "GET ALL INFO" button on the "Info" tab
+ - added: 'scripts' folder - contains useful scripts for processing json files
